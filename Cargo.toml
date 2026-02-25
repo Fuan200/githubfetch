@@ -1,0 +1,29 @@
+[package]
+name = "githubfetch"
+version = "0.1.0"
+edition = "2024"
+description = "A Neofetch-like CLI tool that beautifully displays GitHub profile information in your Kitty Terminal"
+
+[dependencies]
+anyhow = "1.0.102"
+colored = "3.1.1"
+reqwest = { version = "0.13.2", features = ["json"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+tokio = { version = "1.49.0", features = ["full"] }
+
+[package.metadata.deb]
+maintainer = "Juan Díaz <juandiazfdez1992@gmail.com>"
+copyright = "2026, Juan Díaz"
+license-file = ["LICENSE"]
+assets = [
+    ["target/release/githubfetch", "usr/bin/", "755"],
+]
+
+[package.metadata.generate-rpm]
+summary = "A Neofetch-like CLI tool that beautifully displays GitHub profile information in your Kitty Terminal"
+license = "MIT"
+release = "1"
+assets = [
+    { source = "target/release/githubfetch", dest = "/usr/bin/githubfetch", mode = "755" }
+]
