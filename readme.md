@@ -67,7 +67,7 @@ makepkg -si
 
 ### Usage
 ```bash
-githubfetch <githubuser>
+githubfetch <github-username>
 ```
 ### Example
 ```bash
